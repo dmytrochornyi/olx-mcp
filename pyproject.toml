@@ -1,0 +1,39 @@
+[project]
+name = "olx-mcp"
+version = "0.1.0"
+description = "MCP server for searching OLX.pl classifieds, with photo review for offers that have weak descriptions"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Dmytro Chornyi" }]
+requires-python = ">=3.12"
+keywords = ["mcp", "model-context-protocol", "olx", "olx.pl", "claude", "playwright", "classifieds"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
+]
+dependencies = [
+    "httpx>=0.28.1",
+    "mcp[cli]>=2.3.0",
+    "playwright>=1.65.2",
+]
+
+[project.urls]
+Homepage = "https://github.com/dmytrochornyi/olx-mcp"
+Issues = "https://github.com/dmytrochornyi/olx-mcp/issues"
+Changelog = "https://github.com/dmytrochornyi/olx-mcp/blob/main/CHANGELOG.md"
+
+[project.scripts]
+olx-mcp = "olx_mcp.server:main"
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[build-system]
+requires = ["uv_build>=0.11.29,<0.12.0"]
+build-backend = "uv_build"
